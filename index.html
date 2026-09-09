@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">LoveOS • Nosso Amor em Código</title>
+  
+  <!-- Fontes do Google: Outfit (Moderna/Elegante) & Fira Code (Nerd/Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Fundos atmosféricos flutuantes -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Canvas para partículas de corações e confetes -->
+  <canvas id="hearts-canvas"></canvas>
+
+  <div class="app-container">
+    <!-- Barra Superior de Sistema -->
+    <header class="system-bar">
+      <div class="sys-left">
+        <div class="status-dot"></div>
+        <span class="sys-title" id="sys-status-text">love_kernel.sys • RUNNING (ONLINE)</span>
+      </div>
+      <div class="sys-right">
+        <button class="secret-heart-btn" id="easter-egg-heart" title="Clique várias vezes para um segredo...">💖</button>
+      </div>
+    </header>
+
+    <!-- Seção Hero / Apresentação -->
+    <main>
+      <section class="hero-section">
+        <div class="couple-badge">
+          <span>💍</span>
+          <span id="badge-text">Bernardo & Você</span>
+        </div>
+        <h1 class="hero-title" id="hero-main-title">
+          Provando meu amor com <br><span class="names">100% de precisão</span>
+        </h1>
+        <p class="hero-subtitle" id="hero-subtitle-text">
+          Compilado com carinho, dedicação e zero bugs de sentimento.
+        </p>
+
+        <!-- Grade de Estatísticas Nerd -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-label">// Versão do Sistema</span>
+            <span class="stat-value" id="stat-version">v2.5.0-love</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">// Disponibilidade (SLA)</span>
+            <span class="stat-value" id="stat-uptime">99.999%</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">// Taxa de Carinho</span>
+            <span class="stat-value" id="stat-rate">Infinito req/s</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">// Bugs Encontrados</span>
+            <span class="stat-value" id="stat-bugs">0</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contador em Tempo Real (Uptime do Relacionamento) -->
+      <section class="timer-container">
+        <div class="timer-header">
+          <span>⏱️</span>
+          <h2 class="timer-title">Tempo Exato que Estamos Juntos</h2>
+        </div>
+        <div class="timer-grid">
+          <div class="timer-box">
+            <span class="timer-num" id="time-years">00</span>
+            <span class="timer-unit">Anos</span>
+          </div>
+          <div class="timer-box">
+            <span class="timer-num" id="time-months">00</span>
+            <span class="timer-unit">Meses</span>
+          </div>
+          <div class="timer-box">
+            <span class="timer-num" id="time-days">00</span>
+            <span class="timer-unit">Dias</span>
+          </div>
+          <div class="timer-box">
+            <span class="timer-num" id="time-hours">00</span>
+            <span class="timer-unit">Horas</span>
+          </div>
+          <div class="timer-box">
+            <span class="timer-num" id="time-minutes">00</span>
+            <span class="timer-unit">Minutos</span>
+          </div>
+          <div class="timer-box">
+            <span class="timer-num" id="time-seconds">00</span>
+            <span class="timer-unit">Segundos</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Terminal Interativo: Testes Unitários do Nosso Amor -->
+      <section class="section-wrapper">
+        <div class="section-title-wrap">
+          <div class="section-icon">🧪</div>
+          <div>
+            <h2 class="section-title">Testes Unitários de Sentimento</h2>
+            <p class="section-subtitle">A prova científica e lógica de que nosso amor funciona perfeitamente</p>
+          </div>
+        </div>
+
+        <div class="test-terminal">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="terminal-title">bash: run_love_tests.py --assert-forever</span>
+            <button class="run-tests-btn" id="btn-run-tests">▶ Reexecutar Testes</button>
+          </div>
+          <div class="terminal-body" id="test-terminal-output">
+            <!-- Linhas de teste preenchidas dinamicamente pelo script.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Botão de Emergência: Gerador de Motivos de Amor -->
+      <section class="section-wrapper">
+        <div class="section-title-wrap">
+          <div class="section-icon">💌</div>
+          <div>
+            <h2 class="section-title">Central de Motivos de Amor</h2>
+            <p class="section-subtitle">Para quando você precisar lembrar o quanto é amada e especial</p>
+          </div>
+        </div>
+
+        <div class="emergency-box">
+          <button class="emergency-btn" id="btn-reason">
+            <span>✨</span>
+            <span>Me dê um motivo de amor</span>
+            <span>💖</span>
+          </button>
+          <div class="reason-card" id="reason-display">
+            Clique no botão acima para sortear uma declaração feita para você...
+          </div>
+        </div>
+      </section>
+
+      <!-- Linha do Tempo das Memórias -->
+      <section class="section-wrapper">
+        <div class="section-title-wrap">
+          <div class="section-icon">📖</div>
+          <div>
+            <h2 class="section-title">Nossos Marcos Históricos</h2>
+            <p class="section-subtitle">O changelog da nossa jornada até aqui</p>
+          </div>
+        </div>
+
+        <div class="timeline-container" id="timeline-list">
+          <!-- Itens da linha do tempo preenchidos pelo script.js -->
+        </div>
+      </section>
+
+      <!-- Cupons Virtuais Interativos -->
+      <section class="section-wrapper">
+        <div class="section-title-wrap">
+          <div class="section-icon">🎟️</div>
+          <div>
+            <h2 class="section-title">Cupons de Amor Exclusivos</h2>
+            <p class="section-subtitle">Clique em qualquer cupom para resgatar na hora (sem direito a recusa!)</p>
+          </div>
+        </div>
+
+        <div class="vouchers-grid" id="vouchers-list">
+          <!-- Cupons preenchidos pelo script.js -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <p id="footer-credit">Feito com todo o coração por Bernardo para o amor da vida dele.</p>
+      <div class="footer-code">while (meuCoracao.bate()) { eu.teAmo(); }</div>
+    </footer>
+  </div>
+
+  <!-- Modal da Carta Secreta (Easter Egg) -->
+  <div class="modal-overlay" id="secret-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modal-close">×</button>
+      <h3 class="modal-title">
+        <span>💌</span>
+        <span id="modal-title-text">Carta Secreta do Desenvolvedor</span>
+      </h3>
+      <p class="modal-text" id="modal-body-text"></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
